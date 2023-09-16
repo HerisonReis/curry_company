@@ -9,6 +9,7 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 from streamlit_folium import folium_static
+from datetime import datetime
 
 #Não encontrei os icons, quando encontrar, fazer para todas as visões, pois os gráficos ficam maiores.
 #st.set_page_config( page_title='Visão Empresa', page_icon='', layout='wide' )
@@ -200,9 +201,9 @@ st.sidebar.markdown( '## Selecione uma data limite')
 
 date_slider = st.sidebar.slider(
     'Até qual valor?',
-    value=pd.to_datetime(2022, 4, 13 ),
-    min_value=pd.to_datetime(2022, 2, 11 ),
-    max_value=pd.to_datetime(2022, 4, 6 ),
+    value=datetime(2022, 4, 13 ),
+    min_value=datetime(2022, 2, 11 ),
+    max_value=datetime(2022, 4, 6 ),
     format='DD-MM-YYYY' )
 
 st.write( date_slider )
